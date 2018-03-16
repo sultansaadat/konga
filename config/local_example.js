@@ -31,7 +31,7 @@ module.exports = {
   /**
    * The default fallback URL to Kong's admin API.
    */
-  kong_admin_url : process.env.KONG_ADMIN_URL || 'http://127.0.0.1:8001',
+  kong_admin_url : process.env.KONG_ADMIN_URL || 'http://marathon-lb.marathon.mesos:10202',
 
 
   connections: {

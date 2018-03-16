@@ -73,9 +73,9 @@ module.exports.connections = {
    */
   postgres: {
     adapter: 'sails-postgresql',
-    host: process.env.DB_HOST || 'localhost',
-    user:  process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASSWORD || 'admin1!',
+    host: process.env.DB_HOST || 'postgresql-db.marathon.l4lb.thisdcos.directory',
+    user:  process.env.DB_USER || 'admin',
+    password: process.env.DB_PASSWORD || 'admin123',
     port: process.env.DB_PORT || 5432,
     database: process.env.DB_DATABASE ||'konga_database',
     poolSize: process.env.DB_POOLSIZE || 10,

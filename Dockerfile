@@ -1,11 +1,18 @@
-FROM node:alpine
+FROM node:6.12.3-alpine 
 
 COPY . /app
 
 WORKDIR /app
 
-RUN npm install -g bower
-RUN npm install
+RUN apk upgrade --update \
+    && apk add bash git ca-certificates \
+    && npm install -g bower \
+    && npm --unsafe-perm --production install \
+    && apk del git \
+    && rm -rf /var/cache/apk/* \
+        /app/.git \
+        /app/screenshots \
+        /app/test
 
 EXPOSE 1337
 
